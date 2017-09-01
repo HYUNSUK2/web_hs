@@ -26,20 +26,21 @@
 						<th>조회수</th>
 						<th>작성일</th>
 						<th>&nbsp;</th>
-					</tr>				
+					</tr>
+					<c:set var="totalCount" value="${fn:length(list) }"/>
+					<c:forEach items="${list }" var="vo" varStatus="status" >					
 					<tr>
-						<c:set var="totalCount" value="${fn:length(list) }"/>
-						<c:forEach items="${list }" var="vo" varStatus="status" >	
 							<td>[${totalCount - status.index }]</td>
 							<td class="left">
-								<a href="${pageContext.request.contextPath }/board?a=view">${vo.content }</a>
+							
+								<a href="${pageContext.request.contextPath }/board?a=view&no=${vo.no }">${vo.title }</a>
 							</td>
 							<td>${vo.name }</td>
 							<td>${vo.hit }</td>
 							<td>${vo.regDate }</td>
 							<td><a href="" class="del">삭제</a></td>
-						</c:forEach>
 					</tr>
+					</c:forEach>
 					<%-- <tr>
 						<td>4</td>
 						<td class="left">

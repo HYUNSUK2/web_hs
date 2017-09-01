@@ -6,6 +6,7 @@ public class BoardVo {
 	private String content;
 	private String regDate;
 	private String hit;
+	private String name;
 	
 	public long getNo() {
 		return no;
@@ -36,6 +37,12 @@ public class BoardVo {
 	}
 	public void setHit(String hit) {
 		this.hit = hit;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	@Override
 	public String toString() {
